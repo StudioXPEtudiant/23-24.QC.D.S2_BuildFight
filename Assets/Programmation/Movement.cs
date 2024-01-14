@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
 
     public float gravity = 20f;
 
+    public float RotationSpeed = 60f;
+
     private Vector3 moveD = Vector3.zero;
 
     CharacterController Cac;
@@ -32,8 +34,13 @@ public class Movement : MonoBehaviour
             }
         }
         moveD.y -= gravity * Time.deltaTime;
-        transform.Rotate (Vector3.up *Input.GetAxis("Mouse X")*Time.deltaTime * speed * 10);
+        transform.Rotate (Vector3.up *Input.GetAxis("Mouse X")*Time.deltaTime * RotationSpeed);
 
         Cac.Move(moveD*Time.deltaTime);
+    }
+
+    void OnMouseDown()
+    {
+        Screen.lockCursor = true;
     }
 }
