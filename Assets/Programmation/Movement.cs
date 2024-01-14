@@ -9,8 +9,6 @@ public class Movement : MonoBehaviour
     
     public float jumpspeed = 8f;
 
-    public float gravity = 20f;
-
     public float RotationSpeed = 60f;
 
     private Vector3 moveD = Vector3.zero;
@@ -33,7 +31,7 @@ public class Movement : MonoBehaviour
                 moveD.y = jumpspeed;
             }
         }
-        moveD.y -= gravity * Time.deltaTime;
+        moveD += Physics.gravity * Time.deltaTime;
         transform.Rotate (Vector3.up *Input.GetAxis("Mouse X")*Time.deltaTime * RotationSpeed);
 
         Cac.Move(moveD*Time.deltaTime);
