@@ -323,23 +323,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1436746299 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7879924732987480399, guid: 7bb46423891e06e4ebd049cfa917bdd1, type: 3}
-  m_PrefabInstance: {fileID: 1897973429}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1436746303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436746299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274fd4a2d6562d64bb2cdc16b2958657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1878016592
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3029251420693570559, guid: 7bb46423891e06e4ebd049cfa917bdd1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3029251420693570559, guid: 7bb46423891e06e4ebd049cfa917bdd1, type: 3}
       propertyPath: RotationSpeed
@@ -512,10 +495,7 @@ PrefabInstance:
     - {fileID: 1791998610188319171, guid: 7bb46423891e06e4ebd049cfa917bdd1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7879924732987480399, guid: 7bb46423891e06e4ebd049cfa917bdd1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1436746303}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bb46423891e06e4ebd049cfa917bdd1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
