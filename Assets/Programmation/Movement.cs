@@ -7,7 +7,9 @@ public class Movement : MonoBehaviour
     public float speed = 10f;
     public float jumpspeed = 8f;
     public float RotationSpeed = 120f;
-    public float verticalRotationLimit = 80f; // Limite de rotation verticale
+    public float verticalRotationLimit = 80f;
+    public float range;
+    public LayerMask layermask;
 
     private Vector3 moveD = Vector3.zero;
     private float verticalRotation = 0f;
@@ -30,7 +32,7 @@ public class Movement : MonoBehaviour
             if (Input.GetButton("Jump"))
             {
                 moveD.y = jumpspeed;
-            }
+            } 
         }
 
         moveD += Physics.gravity * Time.deltaTime;
@@ -57,5 +59,23 @@ public class Movement : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // Vérifie si le joueur clique sur le PNJ
+        if (Input.GetButtonDown("Fire1"))
+        {
+            RaycastHit hit;
+            
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range, layermask))
+            {
+                if (hit.collider.gameObject.CompareTag("PNJ"))
+                {
+                    // Affiche le dialogue
+                    //something
+                    hit.collider.gameObject.GetComponent<Dialogue>().ShowDialogue();
+                }
+            }
+        }
+        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * range, Color.blue);
     }
 }
