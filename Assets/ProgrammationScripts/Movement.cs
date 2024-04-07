@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         Cac = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -48,7 +49,7 @@ public class Movement : MonoBehaviour
         Cac.Move(moveD * Time.deltaTime);
 
       
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -58,7 +59,7 @@ public class Movement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-        }
+        }*/
 
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // Vérifie si le joueur clique sur le PNJ
