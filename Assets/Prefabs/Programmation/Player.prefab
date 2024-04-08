@@ -255,4 +255,4 @@ MonoBehaviour:
   range: 20
   layermask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63

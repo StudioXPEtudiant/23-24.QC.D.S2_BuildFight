@@ -7,8 +7,8 @@ public class Dialogue : MonoBehaviour
     public Text dialogueText; // Référence au composant texte pour afficher le dialogue
     private int currentLine = 0; // La ligne de dialogue actuelle
     public GameObject panel;
-    public float range;
-    public LayerMask layermask;
+    //public float range;
+    //public LayerMask layermask;
 
     void Start()
     {

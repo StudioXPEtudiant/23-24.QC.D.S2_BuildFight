@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ea21d6cf132c74cbf8b7ef386fc1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSpeed: 0.02
+  timeSpeed: 0.2
   startHour: 6
 --- !u!114 &3338333117772319961
 MonoBehaviour:
@@ -60,5 +60,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 3744412016047872082}
-  sun: {fileID: 0}
+  sun: {fileID: 5505963646835419339, guid: e27b4f5f357bf7248b8b43b48045d112, type: 3}
   moon: {fileID: 0}

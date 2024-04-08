@@ -66,25 +66,29 @@ public class DayNightCycle : MonoBehaviour
     void Update()
     {
 
-    // Entre le matin et le midi
-    if (timeManager.CurrentTime >= _HeureMatin && timeManager.CurrentTime < _HeureMidi) {
-    // Avance à la vitesse du matin
-    _rotX += timeManager.CurrentTime * _VitesseMatin;
-    }
-    // Entre le midi et le soir
-    else if (timeManager.CurrentTime >= _HeureMidi && timeManager.CurrentTime < _HeureNuit) 
-    {
-    // Avance à la vitesse du soir
-    _rotX += timeManager.CurrentTime * _VitessePM;
-    }
-    else {
-    // Le reste du temps, vitesse de nuit
-    _rotX += timeManager.CurrentTime * _VitesseNuit;
-    }
-    // Quand le soleil passe droit, on revient à 0
-    if (_rotX > 360) {
-    _rotX = 0;
-    }
+        // Entre le matin et le midi
+        if (timeManager.CurrentTime >= _HeureMatin && timeManager.CurrentTime < _HeureMidi) 
+        { 
+            // Avance à la vitesse du matin
+            _rotX += timeManager.CurrentTime * _VitesseMatin;
+        }
+        // Entre le midi et le soir
+        else if (timeManager.CurrentTime >= _HeureMidi && timeManager.CurrentTime < _HeureNuit) 
+        {
+            // Avance à la vitesse du soir
+            _rotX += timeManager.CurrentTime * _VitessePM; 
+        }
+        else
+        {
+            // Le reste du temps, vitesse de nuit
+            _rotX += timeManager.CurrentTime * _VitesseNuit;
+        }
+        
+        // Quand le soleil passe droit, on revient à 0
+        if (_rotX > 360)
+        { 
+            _rotX = 0;
+        }
 
 
         // rotX = un degré selon l'heure
