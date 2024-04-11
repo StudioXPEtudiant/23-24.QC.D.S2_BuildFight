@@ -11,18 +11,19 @@ public class DetectAndActionate : MonoBehaviour
 
     private Dialogue _dialogue;
 
-    private RaycastHit hit;
+    private RaycastHit _hit;
     
-    //Quand je joueur clique sur le bouton gauche ded la souris
+    //Quand je joueur clique sur le bouton gauche de la souris
     public void ActionateObjectFirstAction()
     {
         if(Camera.main == null) return;
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (!Physics.Raycast(ray, out hit, distance)) return;
+        if (!Physics.Raycast(ray, out _hit, distance)) return;
         
-        _dialogue = hit.collider.gameObject.GetComponent<Dialogue>();
+        _dialogue = _hit.collider.gameObject.GetComponent<Dialogue>();
         if (_dialogue)
-            _dialogue.ShowDialogue();
+            _dialogue.ShowNextLine();
     }
+    
 }

@@ -1,14 +1,26 @@
+using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Dialogue : MonoBehaviour
 {
-    public string[] dialogueLines; // Les lignes de dialogue du PNJ
-    public Text dialogueText; // Référence au composant texte pour afficher le dialogue
-    private int currentLine = 0; // La ligne de dialogue actuelle
-    public GameObject panel;
-    //public float range;
-    //public LayerMask layermask;
+    [SerializeField] private string[] dialogueLines; // Les lignes de dialogue du PNJ
+    [SerializeField] private Text dialogueText; // Référence au composant texte pour afficher le dialogue
+    
+    [SerializeField] private GameObject panel;
+    private Spawner _spawner;
+
+    //[SerializeField] private UnityEvent endDialogue;
+    
+    private int _currentLine = 0; // La ligne de dialogue actuelle
+
+    private void Awake()
+    {
+        _spawner = GetComponentInChildren<Spawner>();
+    }
 
     void Start()
     {
@@ -18,27 +30,30 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-       
+       //CheckDialoguesOfPnj();
     }
 
-    public void ShowDialogue()
+    public void ShowNextLine()
     {
         // Vérifie s'il reste des lignes de dialogue à afficher
-        if (currentLine < dialogueLines.Length)
+        
+        if (_currentLine < dialogueLines.Length)
         {
             // Affiche la prochaine ligne de dialogue
-            dialogueText.text = dialogueLines[currentLine];
-            currentLine++;
+            
+            DialogueUIController.Instance.Show(dialogueLines[_currentLine++]);
             panel.SetActive(true);
             dialogueText.gameObject.SetActive(true);
         }
-        else
+        else if(_currentLine >= dialogueLines.Length)
         {
             // Cache le texte de dialogue s'il n'y a plus de lignes à afficher
-            dialogueText.gameObject.SetActive(false);
-            panel.SetActive(false);
 
-
+            //endDialogue.Invoke();
+            _spawner.Spawn();
+            DialogueUIController.Instance.Hide();
         }
     }
+    
+    
 }

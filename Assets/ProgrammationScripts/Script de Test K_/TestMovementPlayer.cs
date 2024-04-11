@@ -8,12 +8,12 @@ using UnityEngine;
 public class TestMovementPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject head;
-    [SerializeField] private float minSpeed = 4;
-    [SerializeField] private float maxSpeed = 6;
-    [SerializeField] private float minRotation = -90;
-    [SerializeField] private float maxRotation = 90;
-    [SerializeField] private float jumpSpeed = 8;
-
+    [SerializeField] private float minSpeed = 4f;
+    [SerializeField] private float maxSpeed = 6f;
+    [SerializeField] private float minRotation = -90f;
+    [SerializeField] private float maxRotation = 90f;
+    //[SerializeField] private float jumpForce = 10;
+    
     private float _headTilt = 0;
     private float speed;
     
@@ -21,20 +21,29 @@ public class TestMovementPlayer : MonoBehaviour
 
     private Vector3 _movementX;
     private Vector3 _movementZ;
-    private Vector3 _movementY = Vector3.zero;
+    /*private Vector3 _moveUp = Vector3.zero;
+    private Rigidbody _rigidbody;*/
 
     private void Start()
     {
-        _characterController = GetComponent<CharacterController>(); 
+        _characterController = GetComponent<CharacterController>();
+        //_rigidbody = GetComponent<Rigidbody>();
         speed = minSpeed;
     }
 
     private void Update()
     {
-        Vector3 movement = (_movementX + _movementZ).normalized;
+        var movement = (_movementX + _movementZ).normalized;
 
         _characterController.Move(Physics.gravity * Time.deltaTime);
         _characterController.Move(movement * (Time.deltaTime * speed));
+        
+        //Jump();
+
+        /*if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+        }*/
     }
     
     public void TiltHead (float mouseYValue)
@@ -67,16 +76,8 @@ public class TestMovementPlayer : MonoBehaviour
         _movementZ = transform.forward * verticalValue;
     }
 
-    public void Jump()
+    /*public void Jump(float jumpForce)
     {
-        /*if (!_characterController.isGrounded) return;
-        
-        _movementY = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        _movementY = transform.TransformDirection(_movementY);
-        _movementY *= speed;
-        
-        _movementY.y = jumpSpeed;
-        
-        _movementY += Physics.gravity * Time.deltaTime;*/
-    }
+        _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }*/
 }

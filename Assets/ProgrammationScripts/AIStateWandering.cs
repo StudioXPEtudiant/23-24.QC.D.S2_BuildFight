@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIStateWandering : MonoBehaviour
 {
-private bool _waiting = false;
+private bool _waiting;
 
 [SerializeField] private float range = 5;
 [SerializeField] private float minWaitTime = 0;
@@ -24,10 +24,10 @@ if (_waiting) return;
 _waiting = true;
 
 _aiMovement.MoveToRandom(transform.position, range);
-StartCoroutine(StopWait());
+StartCoroutine(Wait());
 }
 
-private IEnumerator StopWait()
+private IEnumerator Wait()
 {
 yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
 _waiting = false;

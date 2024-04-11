@@ -109,6 +109,7 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 63
+  _movementPlayer: {fileID: 0}
 --- !u!1 &5143844928545561912
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,32 +347,6 @@ MonoBehaviour:
         - m_Target: {fileID: 2922862529585457289}
           m_TargetAssemblyTypeName: DetectAndActionate, Assembly-CSharp
           m_MethodName: ActionateObjectFirstAction
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    buttonUp:
-      m_PersistentCalls:
-        m_Calls: []
-    button:
-      m_PersistentCalls:
-        m_Calls: []
-    sendAxisValue:
-      m_PersistentCalls:
-        m_Calls: []
-  - axis: Jump
-    isButton: 1
-    buttonDown:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3322869778020631076}
-          m_TargetAssemblyTypeName: TestMovementPlayer, Assembly-CSharp
-          m_MethodName: Jump
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
