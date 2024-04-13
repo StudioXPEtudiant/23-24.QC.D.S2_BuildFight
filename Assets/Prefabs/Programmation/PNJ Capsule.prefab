@@ -331,7 +331,6 @@ GameObject:
   - component: {fileID: 1523821096974080334}
   - component: {fileID: 7257688463696412031}
   - component: {fileID: 5302861466938606781}
-  - component: {fileID: 3066135419534782720}
   m_Layer: 0
   m_Name: PNJ Capsule
   m_TagString: PNJ
@@ -429,24 +428,3 @@ CapsuleCollider:
   m_Height: 2.0713062
   m_Direction: 1
   m_Center: {x: 0, y: -0.035653114, z: 0}
---- !u!114 &3066135419534782720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8846427392374294580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1eed4dc65450d4439889d6044ce6e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueLines:
-  - "\xC7a"
-  - marche
-  - youpii!!
-  dialogueText: {fileID: 1709549607116246073}
-  panel: {fileID: 3280270825427885877}
-  endDialogue:
-    m_PersistentCalls:
-      m_Calls: []

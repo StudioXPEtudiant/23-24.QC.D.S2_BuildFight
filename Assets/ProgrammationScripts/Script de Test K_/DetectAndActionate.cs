@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DetectAndActionate : MonoBehaviour
 {
     [SerializeField] private float distance;
     [SerializeField] private LayerMask layers;
-
-    private Dialogue _dialogue;
+    private NPCDialogueCollection _collection;
 
     private RaycastHit _hit;
     
@@ -20,10 +20,11 @@ public class DetectAndActionate : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (!Physics.Raycast(ray, out _hit, distance)) return;
-        
-        _dialogue = _hit.collider.gameObject.GetComponent<Dialogue>();
-        if (_dialogue)
-            _dialogue.ShowNextLine();
+
+        _collection = _hit.collider.GetComponent<NPCDialogueCollection>();
+
+        if (_collection) 
+            _collection.Execute();
     }
     
 }
