@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3997632991026750114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 1523821096974080334}
   - component: {fileID: 7257688463696412031}
   - component: {fileID: 5302861466938606781}
+  - component: {fileID: 2044134896388547824}
   m_Layer: 0
   m_Name: PNJ Capsule
   m_TagString: PNJ
@@ -428,3 +429,46 @@ CapsuleCollider:
   m_Height: 2.0713062
   m_Direction: 1
   m_Center: {x: 0, y: -0.035653114, z: 0}
+--- !u!114 &2044134896388547824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846427392374294580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b0dc030b3148d6b2f54dbba25ab602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - isRepeatable: 0
+    dialogueLines:
+    - Ca
+    - Marche
+    - Youpii!!!
+    dialogueText: {fileID: 1709549607116246073}
+    panel: {fileID: 3280270825427885877}
+    dialogueEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3798244088891287038}
+          m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - isRepeatable: 1
+    dialogueLines:
+    - "D\xE9sol\xE9 je t'ai d\xE9ja tout donn\xE9"
+    dialogueText: {fileID: 1709549607116246073}
+    panel: {fileID: 3280270825427885877}
+    dialogueEnd:
+      m_PersistentCalls:
+        m_Calls: []
