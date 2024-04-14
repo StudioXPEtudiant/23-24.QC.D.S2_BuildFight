@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour
                 {
                     // Affiche le dialogue
                     //something
-                    hit.collider.gameObject.GetComponent<Dialogue>().ShowDialogue();
+                    hit.collider.gameObject.GetComponent<Dialogue>().ShowNextLine();
                 }
             }
         }

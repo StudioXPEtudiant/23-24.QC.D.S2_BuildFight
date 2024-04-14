@@ -28,7 +28,7 @@ public class TimeManager : MonoBehaviour
 
         }
 
-        Debug.Log("Il est " + (int)_currentTime + "h et nous sommes au jour " + _currentDay + ".");
+        //Debug.Log("Il est " + (int)_currentTime + "h et nous sommes au jour " + _currentDay + ".");
 
         /*if (_currentTime >= sunriseHour)
         {
