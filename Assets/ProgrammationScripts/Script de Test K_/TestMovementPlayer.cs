@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TestMovementPlayer : MonoBehaviour
 {
@@ -11,39 +12,41 @@ public class TestMovementPlayer : MonoBehaviour
     [SerializeField] private float minSpeed = 4f;
     [SerializeField] private float maxSpeed = 6f;
     [SerializeField] private float minRotation = -90f;
-    [SerializeField] private float maxRotation = 90f;
-    //[SerializeField] private float jumpForce = 10;
+    [SerializeField] private float maxRotation = 90f; 
+    [SerializeField] private float jumpSpeed = 10;
     
     private float _headTilt = 0;
-    private float speed;
+    private float _speed;
+    private bool _isJumping;
     
     private CharacterController _characterController;
 
     private Vector3 _movementX;
     private Vector3 _movementZ;
-    /*private Vector3 _moveUp = Vector3.zero;
-    private Rigidbody _rigidbody;*/
+    private Vector3 _velocity;
 
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
-        //_rigidbody = GetComponent<Rigidbody>();
-        speed = minSpeed;
+        _speed = minSpeed;
     }
 
     private void Update()
     {
         var movement = (_movementX + _movementZ).normalized;
-
-        _characterController.Move(Physics.gravity * Time.deltaTime);
-        _characterController.Move(movement * (Time.deltaTime * speed));
+        movement *= Time.deltaTime * _speed;
+        _velocity.x = movement.x;
+        _velocity.z = movement.z;
         
-        //Jump();
-
-        /*if (Input.GetKeyDown(KeyCode.Space))
+        if (_characterController.isGrounded && _isJumping)
         {
-            _rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
-        }*/
+            _velocity.y = jumpSpeed;
+            _isJumping = false;
+        }
+        
+        _velocity.y += Physics.gravity.y * Time.deltaTime;
+        if (_characterController.isGrounded && _velocity.y < 0) _velocity.y = 0;
+        _characterController.Move(_velocity * Time.deltaTime);
     }
     
     public void TiltHead (float mouseYValue)
@@ -76,8 +79,13 @@ public class TestMovementPlayer : MonoBehaviour
         _movementZ = transform.forward * verticalValue;
     }
 
-    /*public void Jump(float jumpForce)
+    public void Jump()
     {
-        _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    }*/
+        if (_characterController.isGrounded)
+        {
+            _isJumping = true;
+            Debug.Log("Saute!!!!!!!");
+        }
+    }
+    
 }

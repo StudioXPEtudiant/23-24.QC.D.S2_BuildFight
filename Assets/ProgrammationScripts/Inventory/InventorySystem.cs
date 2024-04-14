@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,4 +49,19 @@ public class InventorySystem : MonoBehaviour
     }
 
     public Resources[] Data => _data.Items;
+
+    #region Actions
+
+    public void Open()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Close()
+    {
+        gameObject.SetActive(false);
+    }
+
+    #endregion
+    
 }

@@ -9,7 +9,9 @@ public class DetectAndActionate : MonoBehaviour
 {
     [SerializeField] private float distance;
     [SerializeField] private LayerMask layers;
+    
     private NPCDialogueCollection _collection;
+    private InventorySystem _inventorySystem;
 
     private RaycastHit _hit;
     
@@ -26,5 +28,14 @@ public class DetectAndActionate : MonoBehaviour
         if (_collection) 
             _collection.Execute();
     }
-    
+
+    public void OpenInventoryInterface()
+    {
+        _inventorySystem.Open();
+    }
+
+    public void Escape()
+    {
+        _inventorySystem.Close();
+    }
 }
