@@ -105,11 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00461e031944624499842ee7171aa1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
+  distance: 15
   layers:
     serializedVersion: 2
     m_Bits: 63
-  _movementPlayer: {fileID: 0}
 --- !u!1 &5143844928545561912
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +220,6 @@ MonoBehaviour:
   maxSpeed: 15
   minRotation: -90
   maxRotation: 90
-  jumpSpeed: 8
 --- !u!114 &6762230785517002196
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,12 +23,4 @@ public class NPCDialogueCollection : MonoBehaviour
             dialogue.ShowNextLine(); return;
         }
     }
-
-    public void Open()
-    {
-        foreach (var dialogue in dialogues)
-        {
-            dialogue.panel.gameObject.SetActive(true);
-        }
-    }
 }
