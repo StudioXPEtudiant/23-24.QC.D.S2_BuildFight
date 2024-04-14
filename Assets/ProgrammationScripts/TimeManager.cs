@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
     void Awake()
     {
         _currentDay = 0;
-
+        _currentTime = startHour;
     }
 
     void Update()
@@ -43,7 +43,7 @@ public class TimeManager : MonoBehaviour
         
             Debug.Log("Couleur au lever du soleil : " + lerpedColor);
         }*/
-         /*
+         
     }
         public float  CurrentTime
         {
@@ -65,4 +65,4 @@ public class TimeManager : MonoBehaviour
             
 
         
-}*/
+}
