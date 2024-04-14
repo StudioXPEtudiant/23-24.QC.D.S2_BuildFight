@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,13 +11,18 @@ public class TimeManager : MonoBehaviour
     private float _currentTime; 
     private int _currentDay;
 
-    void Awake()
+    void Update()
     {
-        _currentDay = 0;
+        float rotX = transform.eulerAngles.x;
 
+        if (rotX >= 0 && rotX <= 360 && rotX % 15 == 0)
+        {
+            int hour = Mathf.RoundToInt(rotX / 15); // Convertit la rotation en heures (1 heure pour chaque 15 degrés)
+            Debug.Log("Il est " + hour.ToString("00") + "h et nous sommes au jour " + _currentDay + ".");
+        }
     }
 
-    void Update()
+    /*void Update()
     {
         _currentTime +=  Time.deltaTime * timeSpeed;
 
@@ -28,7 +33,7 @@ public class TimeManager : MonoBehaviour
 
         }
 
-        Debug.Log("Il est " + (int)_currentTime + "h et nous sommes au jour " + _currentDay + ".");
+        //Debug.Log("Il est " + (int)_currentTime + "h et nous sommes au jour " + _currentDay + ".");
 
         /*if (_currentTime >= sunriseHour)
         {
@@ -42,9 +47,9 @@ public class TimeManager : MonoBehaviour
 
         
             Debug.Log("Couleur au lever du soleil : " + lerpedColor);
-        }*/
-         /*
-    }
+        }
+         
+    }*/
         public float  CurrentTime
         {
             get
@@ -65,4 +70,4 @@ public class TimeManager : MonoBehaviour
             
 
         
-}*/
+}
