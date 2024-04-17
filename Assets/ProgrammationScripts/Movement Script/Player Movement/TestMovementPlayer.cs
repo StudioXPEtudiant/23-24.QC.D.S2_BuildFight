@@ -84,7 +84,6 @@ public class TestMovementPlayer : MonoBehaviour
         if (_characterController.isGrounded)
         {
             _isJumping = true;
-            Debug.Log("Saute!!!!!!!");
         }
     }
     

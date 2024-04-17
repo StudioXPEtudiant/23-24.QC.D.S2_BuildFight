@@ -1,37 +1,45 @@
 using System;
-using System.Linq;
 using UnityEngine;
 
+[Serializable]
 public class InventoryData
 {
     public InventoryData(int slotCount)
     {
-        Items = new Resources[slotCount];
+        Items = new Item[slotCount];
     }
     
-    public Resources[] Items { get; private set; }
+    public Item[] Items { get; private set; }
 
-    public bool SlotAvailable(Resources itemToAdd)
+    public bool SlotAvailable(Item itemToAdd)
     {
-        return Items.Any(item => item.AvailableFor(itemToAdd));
+        foreach (var item in Items)
+        {
+            if (item.AvailableFor(itemToAdd)) return true;
+        }
+
+        return false;
     }
 
-    public void AddItem(ref Resources itemToAdd)
+    public void AddItem(ref Item itemToAdd)
     {
-        foreach (var t in Items)
+        for (var i = 0; i < Items.Length; i++)
         {
-            if(itemToAdd.Empty) return;
+            if (itemToAdd.Empty) return;
             
-            if(t.AvailableFor(itemToAdd)) t.Merge(ref itemToAdd);
+            if (Items[i].AvailableFor(itemToAdd))
+            {
+                Items[i].Merge(ref itemToAdd);
+            }
         }
     }
 
-    public Resources Pick(int slotID)
+    public Item Pick(int slotID)
     {
         if(slotID > Items.Length) throw new System.Exception($"Id {slotID} out of inventory");
 
         var item = Items[slotID];
-        Items[slotID] = new Resources();
+        Items[slotID] = new Item();
 
         return item;
     }

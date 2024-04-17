@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InventorySystem : MonoBehaviour
 {
     [SerializeField] private InventoryDisplay display;
-
     private InventoryData _data;
     
     public static InventorySystem Instance { get; private set; }
@@ -20,19 +18,21 @@ public class InventorySystem : MonoBehaviour
         display.UpdateDisplay(_data.Items);
 
         Instance = this;
+        //canvas = GameObject.FindGameObjectWithTag("Inventory");
     }
 
-    public Resources AddItem(Resources item)
+    public Item AddItem(Item item)
     {
         if (!_data.SlotAvailable(item)) return item;
 
         _data.AddItem(ref item);
 
         display.UpdateDisplay(_data.Items);
+        
         return item;
     }
 
-    public Resources PickItem(int slotID)
+    public Item PickItem(int slotID)
     {
         var result = _data.Pick(slotID);
         
@@ -48,20 +48,6 @@ public class InventorySystem : MonoBehaviour
         display.UpdateDisplay(_data.Items);
     }
 
-    public Resources[] Data => _data.Items;
-
-    #region Actions
-
-    public void Open()
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void Close()
-    {
-        gameObject.SetActive(false);
-    }
-
-    #endregion
+    public Item[] Data => _data.Items;
     
 }

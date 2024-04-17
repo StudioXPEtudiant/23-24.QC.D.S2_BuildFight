@@ -11,7 +11,7 @@ public class DetectAndActionate : MonoBehaviour
     [SerializeField] private LayerMask layers;
     
     private NPCDialogueCollection _collection;
-    private InventorySystem _inventorySystem;
+    //private OpenInventoryUI _inventoryUI;
 
     private RaycastHit _hit;
     
@@ -29,13 +29,13 @@ public class DetectAndActionate : MonoBehaviour
             _collection.Execute();
     }
 
-    public void OpenInventoryInterface()
+    /*public void OpenInventoryInterface()
     {
-        _inventorySystem.Open();
+        if(_inventoryUI) _inventoryUI.OpenInterface();
     }
 
     public void Escape()
     {
-        _inventorySystem.Close();
-    }
+        _inventoryUI.CloseInterface();
+    }*/
 }
