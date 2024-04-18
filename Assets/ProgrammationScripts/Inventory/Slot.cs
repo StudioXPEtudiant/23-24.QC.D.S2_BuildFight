@@ -14,6 +14,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [SerializeField] private Image itemImage;
 
     private InventoryDisplay _inventoryDisplay;
+    private AthInventoryDisplay _athInventory;
     private Button _button;
 
     public void Initialized(InventoryDisplay inventoryDisplay, int index)
@@ -23,6 +24,12 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _button.onClick.AddListener(OnClick);
         _index = index;
         _inventoryDisplay = inventoryDisplay;
+    }
+    
+    public void InitializedAth(AthInventoryDisplay inventoryDisplay, int index)
+    {
+        _index = index;
+        _athInventory = inventoryDisplay;
     }
 
     public void UpdateDisplay(Item item)

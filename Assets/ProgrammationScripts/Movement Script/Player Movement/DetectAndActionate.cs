@@ -9,9 +9,11 @@ public class DetectAndActionate : MonoBehaviour
 {
     [SerializeField] private float distance;
     [SerializeField] private LayerMask layers;
+    [SerializeField] private OpenInventoryUI inventoryUI;
     
     private NPCDialogueCollection _collection;
-    //private OpenInventoryUI _inventoryUI;
+    
+    private PickableFunction _pickableFunction;
 
     private RaycastHit _hit;
     
@@ -29,13 +31,31 @@ public class DetectAndActionate : MonoBehaviour
             _collection.Execute();
     }
 
-    /*public void OpenInventoryInterface()
+    public void InteractObject()
     {
-        if(_inventoryUI) _inventoryUI.OpenInterface();
+        if (Camera.main == null) return;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
+        if(!Physics.Raycast(ray, out _hit, 5)) return;
+
+        _pickableFunction = _hit.collider.GetComponent<PickableFunction>();
+        if(_pickableFunction)
+        {
+            _pickableFunction.Pick();
+        }
+
+        /*var dropObject = GetComponentInChildren<PickableFunction>();
+        if (dropObject)
+            _pickableFunction.Drop();*/
+    }
+
+    public void OpenInventoryInterface()
+    { 
+        inventoryUI.OpenInterface();
     }
 
     public void Escape()
     {
-        _inventoryUI.CloseInterface();
-    }*/
+        inventoryUI.CloseInterface();
+    }
 }

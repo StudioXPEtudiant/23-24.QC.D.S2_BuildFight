@@ -11,7 +11,7 @@ public class pickableObject : MonoBehaviour
     private bool beingCarried = false;
     private bool touched = false;
 
-    void Update()
+    private void Update()
     {
         // check distance entre objet et joueur
         float dist = Vector3.Distance(gameObject.transform.position, player.position);

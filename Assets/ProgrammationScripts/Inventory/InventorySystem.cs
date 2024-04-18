@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 public class InventorySystem : MonoBehaviour
 {
     [SerializeField] private InventoryDisplay display;
+    [SerializeField] private AthInventoryDisplay athDisplay;
     private InventoryData _data;
     
     public static InventorySystem Instance { get; private set; }
@@ -12,13 +13,10 @@ public class InventorySystem : MonoBehaviour
     private void Awake()
     {
         var slotCount = display.Initialize(this);
-
         _data = new InventoryData(slotCount);
-        
         display.UpdateDisplay(_data.Items);
 
         Instance = this;
-        //canvas = GameObject.FindGameObjectWithTag("Inventory");
     }
 
     public Item AddItem(Item item)
@@ -46,8 +44,8 @@ public class InventorySystem : MonoBehaviour
         _data.Swap(slotA, slotB);
 
         display.UpdateDisplay(_data.Items);
+        athDisplay.UpdateDisplay(_data.Items);
     }
 
     public Item[] Data => _data.Items;
-    
 }

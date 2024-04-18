@@ -109,6 +109,7 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 127
+  inventoryUI: {fileID: 0}
 --- !u!1 &5143844928545561912
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +156,7 @@ GameObject:
   - component: {fileID: 6762230785517002196}
   m_Layer: 0
   m_Name: Joueur Second Version
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,11 +216,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 5143844928545561912}
-  minSpeed: 10
+  minSpeed: 300
   maxSpeed: 15
   minRotation: -90
   maxRotation: 90
-  jumpSpeed: 10
+  jumpSpeed: 5
 --- !u!114 &6762230785517002196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +364,58 @@ MonoBehaviour:
     sendAxisValue:
       m_PersistentCalls:
         m_Calls: []
+  - axis: Jump
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3322869778020631076}
+          m_TargetAssemblyTypeName: TestMovementPlayer, Assembly-CSharp
+          m_MethodName: Jump
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
+  - axis: Interact
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2922862529585457289}
+          m_TargetAssemblyTypeName: DetectAndActionate, Assembly-CSharp
+          m_MethodName: InteractObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
   - axis: Inventory
     isButton: 1
     buttonDown:
@@ -371,6 +424,32 @@ MonoBehaviour:
         - m_Target: {fileID: 2922862529585457289}
           m_TargetAssemblyTypeName: DetectAndActionate, Assembly-CSharp
           m_MethodName: OpenInventoryInterface
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
+  - axis: Cancel
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2922862529585457289}
+          m_TargetAssemblyTypeName: DetectAndActionate, Assembly-CSharp
+          m_MethodName: Escape
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

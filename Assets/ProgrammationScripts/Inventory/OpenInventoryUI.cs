@@ -6,12 +6,12 @@ using UnityEngine;
 public class OpenInventoryUI : MonoBehaviour
 {
     private InventorySystem _inventory;
-    private CharacterController _character;
+    private AthInventorySystem _athInventory;
 
     private void Awake()
     {
         _inventory = GetComponentInChildren<InventorySystem>();
-        _character = FindObjectOfType<CharacterController>();
+        _athInventory = FindObjectOfType<AthInventorySystem>();
     }
     
     private void Start()
@@ -19,21 +19,9 @@ public class OpenInventoryUI : MonoBehaviour
         _inventory.gameObject.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            OpenInterface();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseInterface();
-        }
-    }
-
     public void OpenInterface()
     {
+        _athInventory.gameObject.SetActive(false);
         _inventory.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -42,6 +30,7 @@ public class OpenInventoryUI : MonoBehaviour
     public void CloseInterface()
     {
         _inventory.gameObject.SetActive(false);
+        _athInventory.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

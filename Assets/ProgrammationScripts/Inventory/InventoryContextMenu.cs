@@ -7,6 +7,7 @@ public class InventoryContextMenu : MonoBehaviour
     [SerializeField] private Button dropButton, closeButton;
 
     private InventorySystem _inventorySystem;
+    private AthInventorySystem _athInventory;
 
     private int _targetSlotID;
 
@@ -19,6 +20,11 @@ public class InventoryContextMenu : MonoBehaviour
     public void Init(InventorySystem inventory)
     {
         _inventorySystem = inventory;
+    }
+
+    public void InitAth(AthInventorySystem athInventory)
+    {
+        _athInventory = athInventory;
     }
 
     public void Select(int slotID, Slot slot)
@@ -41,6 +47,7 @@ public class InventoryContextMenu : MonoBehaviour
     private void Drop()
     {
         _inventorySystem.PickItem(_targetSlotID);
+        _athInventory.PickItemToAth(_targetSlotID);
         Close();
     }
 

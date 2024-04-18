@@ -9,6 +9,7 @@ public class InventoryDisplay : MonoBehaviour
     private int _draggedSlotIndex;
 
     private InventorySystem _inventory;
+    private AthInventorySystem _athInventory;
 
     private Slot[] _slots;
 
