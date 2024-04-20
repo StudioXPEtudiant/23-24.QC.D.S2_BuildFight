@@ -8,6 +8,7 @@ public class InventoryContextMenu : MonoBehaviour
 
     private InventorySystem _inventorySystem;
     private AthInventorySystem _athInventory;
+    private PickableFunction _pickable;
 
     private int _targetSlotID;
 
@@ -15,6 +16,8 @@ public class InventoryContextMenu : MonoBehaviour
     {
         dropButton.onClick.AddListener(Drop);
         closeButton.onClick.AddListener(Close);
+
+        _pickable = FindObjectOfType<PickableFunction>();
     }
 
     public void Init(InventorySystem inventory)
@@ -48,6 +51,7 @@ public class InventoryContextMenu : MonoBehaviour
     {
         _inventorySystem.PickItem(_targetSlotID);
         _athInventory.PickItemToAth(_targetSlotID);
+        _pickable.Drop();
         Close();
     }
 

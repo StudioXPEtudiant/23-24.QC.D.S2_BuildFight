@@ -162,8 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0cc48eb1a444b28e4718ee3702cca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerCam: {fileID: 0}
+  pickUpPos: {x: 1, y: -0.6, z: 0.8}
   item:
     count: 1
     data: {fileID: 11400000, guid: 84a967d939c4dab47a17ac92f5ea41bf, type: 2}

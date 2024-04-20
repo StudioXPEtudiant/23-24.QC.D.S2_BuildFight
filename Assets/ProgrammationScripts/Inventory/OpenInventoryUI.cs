@@ -23,6 +23,7 @@ public class OpenInventoryUI : MonoBehaviour
     {
         _athInventory.gameObject.SetActive(false);
         _inventory.gameObject.SetActive(true);
+        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

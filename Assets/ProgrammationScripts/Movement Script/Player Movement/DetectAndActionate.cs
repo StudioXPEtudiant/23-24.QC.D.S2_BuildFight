@@ -8,8 +8,10 @@ using UnityEngine.Serialization;
 public class DetectAndActionate : MonoBehaviour
 {
     [SerializeField] private float distance;
-    [SerializeField] private LayerMask layers;
-    [SerializeField] private OpenInventoryUI inventoryUI;
+    //[SerializeField] private LayerMask layers;
+
+    private OpenInventoryUI _inventoryUI;
+    private AthInventorySystem _athInventory;
     
     private NPCDialogueCollection _collection;
     
@@ -17,6 +19,11 @@ public class DetectAndActionate : MonoBehaviour
 
     private RaycastHit _hit;
     
+    void Awake()
+    {
+        _inventoryUI = FindObjectOfType<OpenInventoryUI>();
+        _athInventory = FindObjectOfType<AthInventorySystem>();
+    }
     //Quand je joueur clique sur le bouton gauche de la souris
     public void ActionateObjectFirstAction()
     {
@@ -51,11 +58,16 @@ public class DetectAndActionate : MonoBehaviour
 
     public void OpenInventoryInterface()
     { 
-        inventoryUI.OpenInterface();
+        _inventoryUI.OpenInterface();
     }
 
     public void Escape()
     {
-        inventoryUI.CloseInterface();
+        _inventoryUI.CloseInterface();
     }
+
+    /*public void SelectNextSlot()
+    {
+        _athInventory.NextSlot();
+    }*/
 }

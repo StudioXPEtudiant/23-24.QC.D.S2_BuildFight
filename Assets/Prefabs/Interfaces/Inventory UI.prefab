@@ -835,6 +835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 4233739216417419482}
+  athDisplay: {fileID: 0}
+  size: 13
 --- !u!1 &6987940640962828867
 GameObject:
   m_ObjectHideFlags: 0

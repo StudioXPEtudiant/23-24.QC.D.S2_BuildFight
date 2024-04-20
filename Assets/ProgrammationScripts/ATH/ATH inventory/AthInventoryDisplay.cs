@@ -33,4 +33,12 @@ public class AthInventoryDisplay : MonoBehaviour
             _slots[i].UpdateDisplay(items[i]);
         }
     }
+
+    public void UpdateDisplayAth(Item[] items)
+    {
+        for(var i = 0; i < _slots.Length; i++)
+        {
+            _slots[i].UpdateDisplay(items[i]);
+        }
+    }
 }
