@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-public class Resources
+public struct Resources
 {
     public static Resources Instance { get; private set; }
 
@@ -29,36 +29,5 @@ public class Resources
         return true;
     }
 
-    public void Merge(ref Resources other)
-    {
-        if (Full) return;
-
-        if (Empty) Data = other.Data;
-        
-        if (other.Data != Data) throw new System.Exception("Try to merge different types items.");
-
-        var total = other.count + count;
-
-        if (total <= Data.stackMaxCount)
-        {
-            count = total;
-            other.count = 0;
-            return;
-        }
-
-        count = Data.stackMaxCount;
-        other.count = total - count;
-
-    }
-
-    public bool AvailableFor(Resources other) => Empty || (Data == other.Data && !Full);
     
-    public ResourceData Data { get; private set; }
-    
-    public bool Full => Data && count >= Data.stackMaxCount;
-
-    public bool Empty => count == 0 || Data == null;
-
-    public int Count => count;
-
 }

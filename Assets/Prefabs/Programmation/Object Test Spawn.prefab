@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7656430205926524933}
   - component: {fileID: 798688797193288852}
   - component: {fileID: -1904504857123381294}
+  - component: {fileID: 1183833678865973893}
+  - component: {fileID: 240299600409870123}
   m_Layer: 0
   m_Name: Object Test Spawn
   m_TagString: Untagged
@@ -133,3 +135,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1183833678865973893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742473462357141661}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59d38feb53e9bb43a06a805a8aa4a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerCam: {fileID: 0}
+  throwForce: 10
+--- !u!114 &240299600409870123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742473462357141661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0cc48eb1a444b28e4718ee3702cca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpPos: {x: 1, y: -0.6, z: 0.8}
+  item:
+    count: 1
+    data: {fileID: 11400000, guid: 84a967d939c4dab47a17ac92f5ea41bf, type: 2}

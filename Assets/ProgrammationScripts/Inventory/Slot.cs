@@ -2,8 +2,6 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
 
@@ -12,12 +10,12 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private int _index;
     private Vector3 _initialImageLocalPosition;
 
-    [SerializeField] private TextMeshProUGUI itemCounText;
+    [SerializeField] private TextMeshProUGUI itemCountText;
     [SerializeField] private Image itemImage;
 
     private InventoryDisplay _inventoryDisplay;
+    private AthInventoryDisplay _athInventory;
     private Button _button;
-    private IBeginDragHandler _beginDragHandlerImplementation;
 
     public void Initialized(InventoryDisplay inventoryDisplay, int index)
     {
@@ -27,13 +25,26 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         _index = index;
         _inventoryDisplay = inventoryDisplay;
     }
-
-    public void UpdateDisplay(Resources item)
+    
+    public void InitializedAth(AthInventoryDisplay inventoryDisplay, int index)
     {
-        if (item.Empty) return;
-        itemCounText.text = item.Count.ToString();
-        itemImage.sprite = item.Data.icon;
-        itemImage.color = Color.white;
+        _index = index;
+        _athInventory = inventoryDisplay;
+    }
+
+    public void UpdateDisplay(Item item)
+    {
+        if (!item.Empty)
+        {
+            itemCountText.text = item.Count.ToString();
+            itemImage.sprite = item.Data.icon;
+            itemImage.color = Color.white;
+            return;
+        }
+
+        itemCountText.text = "";
+        itemImage.sprite = null;
+        itemImage.color = new Color(0, 0, 0, 0);
     }
 
     private void OnClick()
@@ -58,9 +69,8 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
-        Transform transform1;
-        (transform1 = itemImage.transform).SetParent(transform);
-        transform1.localPosition = _initialImageLocalPosition;
+        itemImage.transform.SetParent(transform);
+        itemImage.transform.localPosition = _initialImageLocalPosition;
     }
 
     void IDropHandler.OnDrop(PointerEventData eventData)

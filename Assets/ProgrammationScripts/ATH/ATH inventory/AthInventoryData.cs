@@ -1,17 +1,16 @@
 using System;
-using UnityEngine;
 
 [Serializable]
-public class InventoryData
+public class AthInventoryData
 {
-    public InventoryData(int slotCount)
+    public AthInventoryData(int slotCount)
     {
         Items = new Item[slotCount];
     }
     
     public Item[] Items { get; private set; }
 
-    public bool SlotAvailable(Item itemToAdd)
+    public bool SlotAvailableForAth(Item itemToAdd)
     {
         foreach (var item in Items)
         {
@@ -21,7 +20,7 @@ public class InventoryData
         return false;
     }
 
-    public void AddItem(ref Item itemToAdd)
+    public void AddItemAth(ref Item itemToAdd)
     {
         for (var i = 0; i < Items.Length; i++)
         {
@@ -34,7 +33,7 @@ public class InventoryData
         }
     }
 
-    public Item Pick(int slotID)
+    public Item PickAth(int slotID)
     {
         if(slotID > Items.Length) throw new System.Exception($"Id {slotID} out of inventory");
 
@@ -44,8 +43,8 @@ public class InventoryData
         return item;
     }
 
-    public void Swap(int slotA, int slotB)
+    /*public void Swap(int slotA, int slotB)
     {
         (Items[slotA], Items[slotB]) = (Items[slotB], Items[slotA]);
-    }
+    }*/
 }

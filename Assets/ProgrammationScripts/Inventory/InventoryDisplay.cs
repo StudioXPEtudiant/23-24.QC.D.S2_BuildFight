@@ -1,22 +1,24 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InventoryDisplay : MonoBehaviour
 {
-    [SerializeField] private InventoryContextMenu _contextMenu;
+    [SerializeField] private InventoryContextMenu contextMenu;
     
     private int _draggedSlotIndex;
 
-    private InventorySystem _inventorySystem;
+    private InventorySystem _inventory;
+    private AthInventorySystem _athInventory;
 
     private Slot[] _slots;
 
     public int Initialize(InventorySystem inventory)
     {
         _slots = GetComponentsInChildren<Slot>();
-        _inventorySystem = inventory;
+        _inventory = inventory;
 
-        _contextMenu.Init(inventory);
+        contextMenu.Init(inventory);
 
         for (var i = 0; i < _slots.Length; i++)
         {
@@ -26,7 +28,7 @@ public class InventoryDisplay : MonoBehaviour
         return _slots.Length;
     }
 
-    public void UpdateDisplay(Resources[] items)
+    public void UpdateDisplay(Item[] items)
     {
         for (var i = 0; i < _slots.Length; i++)
         {
@@ -38,14 +40,14 @@ public class InventoryDisplay : MonoBehaviour
 
     public void ClickSlot(int index)
     {
-        _contextMenu.Select(index, _slots[index]);
+        contextMenu.Select(index, _slots[index]);
     }
     
     public void DragSlot(int index) => _draggedSlotIndex = index;
 
     public void DropOnSlot(int index)
     {
-        _inventorySystem.SwapSlots(_draggedSlotIndex, index);
+        _inventory.SwapSlots(_draggedSlotIndex, index);
     }
 
     #endregion
