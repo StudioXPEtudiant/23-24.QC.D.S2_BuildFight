@@ -54,13 +54,13 @@ public class InventorySystem : MonoBehaviour
         athDisplay.UpdateDisplay(_data.Items);
     }
     
-    public bool TrySetItemInEmptySlot(GameObject item)
+    /*public bool TrySetItemInEmptySlot(GameObject item)
     {
         if (_slots[_currentSlot])
             return false;
 
         _slots[_currentSlot] = item;
         return true;
-    }
+    }*/
     public Item[] Data => _data.Items;
 }

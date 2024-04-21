@@ -18,13 +18,15 @@ public class Dialogue
     // Référence au composant du text pour afficher le dialogue
     [FoldoutGroup("Parameters"), SerializeField] private Text dialogueText;
     [FoldoutGroup("Parameters"), SerializeField] public GameObject panel;
-    [FoldoutGroup("Parameters"), SerializeField] private UnityEvent dialogueEnd; //Object  a faire spawn;
+    [FoldoutGroup("Parameters"), SerializeField] private UnityEvent dialogueEnd;
+    //[FoldoutGroup("Parameters"), SerializeField] private PickableFunction pickable;//Object  a faire spawn;
     
     private int _currentLine = 0; // La ligne de dialogue actuelle
     private bool _isCompleted; //Vérifie si les dialoques sont tous jouer
     private bool _isActive = false;
 
     public bool IsAvailable => !_isCompleted;
+    //public bool IsCompeted => _isCompleted = true;
     
     public bool ShowNextLine()
     {
@@ -50,6 +52,11 @@ public class Dialogue
         
         return true;
     }
+
+    /*public void ShowPrice()
+    {
+        pickable.gameObject.SetActive(true);
+    }*/
 
     private void Init() 
     {

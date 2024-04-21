@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class NPCDialogueCollection : MonoBehaviour
 {
@@ -11,7 +7,17 @@ public class NPCDialogueCollection : MonoBehaviour
 
     private Dialogue _currentDialogue;
     private RaycastHit _hit;
-    
+    //private PickableFunction _pickable;
+
+    /*private void Awake()
+    {
+        _pickable = GetComponentInChildren<PickableFunction>();
+    }
+
+    private void Start()
+    {
+        _pickable.gameObject.SetActive(false);
+    }*/
 
     public void Execute()
     {
@@ -20,7 +26,9 @@ public class NPCDialogueCollection : MonoBehaviour
             dialogue.panel.gameObject.SetActive(true);
             if(!dialogue.IsAvailable) continue;
 
-            dialogue.ShowNextLine(); return;
+            dialogue.ShowNextLine(); 
+            //if(!dialogue.IsCompeted) dialogue.ShowPrice();
+            return;
         }
     }
 }

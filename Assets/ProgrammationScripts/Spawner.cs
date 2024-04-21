@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
         //var spawnPos = targetObject.transform.position;
         for(var i = 0; i < quantity; i++)
         {
-            Instantiate(prefab, null).transform.localPosition = transform.position + Vector3.up;
+            Instantiate(prefab).transform.localPosition = transform.position + Vector3.up;
         }
     }
 

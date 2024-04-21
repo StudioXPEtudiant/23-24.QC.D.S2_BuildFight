@@ -21,6 +21,7 @@ public class PickableFunction : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        
 
         _detect = FindObjectOfType<DetectAndActionate>();
         _inventory = FindObjectOfType<InventorySystem>();
@@ -29,7 +30,7 @@ public class PickableFunction : MonoBehaviour
     
     public void Pick()
     {
-        if(!_inventory.TrySetItemInEmptySlot(gameObject)) return;
+        //if(!_inventory.TrySetItemInEmptySlot(gameObject)) return;
         
         Transform transform1;
         (transform1 = transform).parent = _detect.GetComponent<Transform>();
