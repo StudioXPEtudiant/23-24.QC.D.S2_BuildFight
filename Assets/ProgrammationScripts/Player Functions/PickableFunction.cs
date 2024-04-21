@@ -67,12 +67,12 @@ public class PickableFunction : MonoBehaviour
         
         _rb.isKinematic = false;
         _rb.useGravity = true;
+        
+        transform.parent = null;
 
         foreach (var col in GetComponents<Collider>())
         {
             col.enabled = true;
         }
-
-        transform.parent = null;
     }
 }

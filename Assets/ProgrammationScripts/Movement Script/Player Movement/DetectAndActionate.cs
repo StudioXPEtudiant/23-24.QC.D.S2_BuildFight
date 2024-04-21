@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class DetectAndActionate : MonoBehaviour
 {
     [SerializeField] private float distance;
     //[SerializeField] private LayerMask layers;
 
+    private bool _isTake;
     private OpenInventoryUI _inventoryUI;
     private AthInventorySystem _athInventory;
     
@@ -23,6 +19,7 @@ public class DetectAndActionate : MonoBehaviour
     {
         _inventoryUI = FindObjectOfType<OpenInventoryUI>();
         _athInventory = FindObjectOfType<AthInventorySystem>();
+        _pickableFunction = FindObjectOfType<PickableFunction>();
     }
     //Quand je joueur clique sur le bouton gauche de la souris
     public void ActionateObjectFirstAction()
@@ -45,16 +42,23 @@ public class DetectAndActionate : MonoBehaviour
         
         if(!Physics.Raycast(ray, out _hit, 5)) return;
 
-        _pickableFunction = _hit.collider.GetComponent<PickableFunction>();
-        if(_pickableFunction)
-        {
-            _pickableFunction.Pick();
-        }
+        _pickableFunction = _hit.collider.GetComponent<PickableFunction>(); 
+        
+        if (!_pickableFunction) return;
+        _isTake = true;
+        _pickableFunction.Pick();
 
         /*var dropObject = GetComponentInChildren<PickableFunction>();
         if (dropObject)
             _pickableFunction.Drop();*/
     }
+
+    /*public void DropObject()
+    {
+        if(_isTake) return;
+        _pickableFunction.Drop();
+        _isTake = false;
+    }*/
 
     public void OpenInventoryInterface()
     { 
