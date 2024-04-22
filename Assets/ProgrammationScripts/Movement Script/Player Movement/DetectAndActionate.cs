@@ -14,8 +14,8 @@ public class DetectAndActionate : MonoBehaviour
     private PickableFunction _pickableFunction;
 
     private RaycastHit _hit;
-    
-    void Awake()
+
+    private void Awake()
     {
         _inventoryUI = FindObjectOfType<OpenInventoryUI>();
         _athInventory = FindObjectOfType<AthInventorySystem>();

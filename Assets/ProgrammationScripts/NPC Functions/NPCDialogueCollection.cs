@@ -6,18 +6,22 @@ public class NPCDialogueCollection : MonoBehaviour
     [SerializeField] private Dialogue[] dialogues;
 
     private Dialogue _currentDialogue;
-    private RaycastHit _hit;
     //private PickableFunction _pickable;
-
-    /*private void Awake()
+    private void Awake()
     {
-        _pickable = GetComponentInChildren<PickableFunction>();
+        foreach (var dialogue in dialogues)
+        {
+            dialogue.pickable = GetComponentInChildren<PickableFunction>();
+        }
     }
 
     private void Start()
     {
-        _pickable.gameObject.SetActive(false);
-    }*/
+        foreach (var dialogue in dialogues)
+        {
+            dialogue.pickable.gameObject.SetActive(false);
+        }
+    }
 
     public void Execute()
     {
@@ -27,7 +31,6 @@ public class NPCDialogueCollection : MonoBehaviour
             if(!dialogue.IsAvailable) continue;
 
             dialogue.ShowNextLine(); 
-            //if(!dialogue.IsCompeted) dialogue.ShowPrice();
             return;
         }
     }

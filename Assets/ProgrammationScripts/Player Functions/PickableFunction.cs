@@ -24,8 +24,11 @@ public class PickableFunction : MonoBehaviour
         
 
         _detect = FindObjectOfType<DetectAndActionate>();
+        Debug.Log("1");
         _inventory = FindObjectOfType<InventorySystem>();
+        Debug.Log("2");
         _athInventory = FindObjectOfType<AthInventorySystem>();
+        Debug.Log("3");
     }
     
     public void Pick()
