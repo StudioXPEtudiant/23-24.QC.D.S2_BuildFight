@@ -6,11 +6,13 @@ public class PickableFunction : MonoBehaviour
     /*[SerializeField] private Transform player;
     [SerializeField] private Transform playerCam;*/
     [SerializeField] private Vector3 pickUpPos;
+    [SerializeField] private string questFlag;
     [SerializeField] private Item item;
     
     private InventorySystem _inventory;
     private AthInventorySystem _athInventory;
     private DetectAndActionate _detect;
+    private SimpleGameFlagCollection _flag;
 
     private Rigidbody _rb;
     
@@ -21,15 +23,17 @@ public class PickableFunction : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        
 
         _detect = FindObjectOfType<DetectAndActionate>();
         _inventory = FindObjectOfType<InventorySystem>();
         _athInventory = FindObjectOfType<AthInventorySystem>();
+        _flag = FindObjectOfType<SimpleGameFlagCollection>();
     }
     
     public void Pick()
     {
-        if(!_inventory.TrySetItemInEmptySlot(gameObject)) return;
+        //if(!_inventory.TrySetItemInEmptySlot(gameObject)) return;
         
         Transform transform1;
         (transform1 = transform).parent = _detect.GetComponent<Transform>();
@@ -39,6 +43,7 @@ public class PickableFunction : MonoBehaviour
         _rb.isKinematic = true;
         _rb.useGravity = false;
         
+        _flag.Triggers(questFlag);
         _inventory.AddItem(item);
         _athInventory.AddItemToAth(item);
 
@@ -67,12 +72,12 @@ public class PickableFunction : MonoBehaviour
         
         _rb.isKinematic = false;
         _rb.useGravity = true;
+        
+        transform.parent = null;
 
         foreach (var col in GetComponents<Collider>())
         {
             col.enabled = true;
         }
-
-        transform.parent = null;
     }
 }

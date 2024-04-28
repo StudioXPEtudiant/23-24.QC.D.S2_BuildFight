@@ -73,5 +73,5 @@ public class AthInventorySystem : MonoBehaviour
         Debug.Log("Tu possede l'item" + (_currentSlot) + "dans les mains");
     }
 
-    public Item[] Data => _data.Items;
+    //public Item[] Data => _data.Items;
 }

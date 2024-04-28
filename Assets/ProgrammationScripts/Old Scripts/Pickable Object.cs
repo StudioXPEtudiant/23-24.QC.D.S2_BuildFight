@@ -17,7 +17,7 @@ public class pickableObject : MonoBehaviour
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
 
         //si - ou = 2.5 unités de distance = on peut ramasser
-        if (dist <= 1.9f)
+       if (dist <= 1.9f && gameObject.CompareTag("PickableObject"))
         {
             hasPlayer = true;
         }

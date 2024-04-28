@@ -1,10 +1,9 @@
+using System;
 using UnityEngine;
 
 public class AthInventoryDisplay : MonoBehaviour
 {
     [SerializeField] private InventoryContextMenu contextMenu;
-    
-    private int _draggedSlotIndex;
 
     private AthInventorySystem _athInventory;
 

@@ -6,7 +6,7 @@ public class InventorySystem : MonoBehaviour
 {
     [SerializeField] private InventoryDisplay display;
     [SerializeField] private AthInventoryDisplay athDisplay;
-    [SerializeField] private int size = 13;
+    //[SerializeField] private int size = 13;
     
     private InventoryData _data;
 
@@ -21,7 +21,7 @@ public class InventorySystem : MonoBehaviour
         _data = new InventoryData(slotCount);
         display.UpdateDisplay(_data.Items);
 
-        _slots = new GameObject[size];
+        //_slots = new GameObject[size];
         
         Instance = this;
     }
@@ -54,13 +54,13 @@ public class InventorySystem : MonoBehaviour
         athDisplay.UpdateDisplay(_data.Items);
     }
     
-    public bool TrySetItemInEmptySlot(GameObject item)
+    /*public bool TrySetItemInEmptySlot(GameObject item)
     {
         if (_slots[_currentSlot])
             return false;
 
         _slots[_currentSlot] = item;
         return true;
-    }
+    }*/
     public Item[] Data => _data.Items;
 }
