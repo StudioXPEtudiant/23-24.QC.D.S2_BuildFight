@@ -51,7 +51,7 @@ public class Dialogue
             
             _isActive = false;
             
-            pickable.gameObject.SetActive(true);
+            ShowPrice();
             DialogueUIController.Instance.Hide();
             return false;
         }
@@ -59,10 +59,10 @@ public class Dialogue
         return true;
     }
 
-    /*public void ShowPrice()
+    public void ShowPrice()
     {
         pickable.gameObject.SetActive(true);
-    }*/
+    }
 
     private void Init() 
     {

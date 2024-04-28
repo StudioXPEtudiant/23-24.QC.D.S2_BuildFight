@@ -7,9 +7,9 @@ public class DetectAndActionate : MonoBehaviour
 
     private bool _isTake;
     private OpenInventoryUI _inventoryUI;
-    private AthInventorySystem _athInventory;
+    //private AthInventorySystem _athInventory;
     
-    private NPCDialogueCollection _collection;
+    private SimpleConditionalAction _dialogue;
     
     private PickableFunction _pickableFunction;
 
@@ -18,7 +18,7 @@ public class DetectAndActionate : MonoBehaviour
     private void Awake()
     {
         _inventoryUI = FindObjectOfType<OpenInventoryUI>();
-        _athInventory = FindObjectOfType<AthInventorySystem>();
+        //_athInventory = FindObjectOfType<AthInventorySystem>();
         _pickableFunction = FindObjectOfType<PickableFunction>();
     }
     //Quand je joueur clique sur le bouton gauche de la souris
@@ -29,10 +29,10 @@ public class DetectAndActionate : MonoBehaviour
 
         if (!Physics.Raycast(ray, out _hit, distance)) return;
 
-        _collection = _hit.collider.GetComponent<NPCDialogueCollection>();
+        _dialogue = _hit.collider.GetComponent<SimpleConditionalAction>();
 
-        if (_collection) 
-            _collection.Execute();
+        if (_dialogue) 
+            _dialogue.Execute();
     }
 
     public void InteractObject()

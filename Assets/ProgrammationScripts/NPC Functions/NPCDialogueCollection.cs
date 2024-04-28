@@ -4,6 +4,7 @@ using UnityEngine;
 public class NPCDialogueCollection : MonoBehaviour
 {
     [SerializeField] private Dialogue[] dialogues;
+    //[SerializeField] private PickableFunction price;
 
     private Dialogue _currentDialogue;
     //private PickableFunction _pickable;
@@ -13,6 +14,7 @@ public class NPCDialogueCollection : MonoBehaviour
         {
             dialogue.pickable = GetComponentInChildren<PickableFunction>();
         }
+        //price = FindObjectOfType<PickableFunction>();
     }
 
     private void Start()
@@ -21,6 +23,8 @@ public class NPCDialogueCollection : MonoBehaviour
         {
             dialogue.pickable.gameObject.SetActive(false);
         }
+        
+        //price.gameObject.SetActive(false);
     }
 
     public void Execute()

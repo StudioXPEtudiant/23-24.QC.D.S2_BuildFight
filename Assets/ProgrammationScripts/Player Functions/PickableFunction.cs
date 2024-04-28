@@ -6,11 +6,13 @@ public class PickableFunction : MonoBehaviour
     /*[SerializeField] private Transform player;
     [SerializeField] private Transform playerCam;*/
     [SerializeField] private Vector3 pickUpPos;
+    [SerializeField] private string questFlag;
     [SerializeField] private Item item;
     
     private InventorySystem _inventory;
     private AthInventorySystem _athInventory;
     private DetectAndActionate _detect;
+    private SimpleGameFlagCollection _flag;
 
     private Rigidbody _rb;
     
@@ -24,11 +26,9 @@ public class PickableFunction : MonoBehaviour
         
 
         _detect = FindObjectOfType<DetectAndActionate>();
-        Debug.Log("1");
         _inventory = FindObjectOfType<InventorySystem>();
-        Debug.Log("2");
         _athInventory = FindObjectOfType<AthInventorySystem>();
-        Debug.Log("3");
+        _flag = FindObjectOfType<SimpleGameFlagCollection>();
     }
     
     public void Pick()
@@ -43,6 +43,7 @@ public class PickableFunction : MonoBehaviour
         _rb.isKinematic = true;
         _rb.useGravity = false;
         
+        _flag.Triggers(questFlag);
         _inventory.AddItem(item);
         _athInventory.AddItemToAth(item);
 

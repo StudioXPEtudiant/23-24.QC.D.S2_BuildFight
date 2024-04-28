@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1742473462357141661
+--- !u!1 &216673892903945202
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7149789324259346864}
-  - component: {fileID: 4002140071127822364}
-  - component: {fileID: 7656430205926524933}
-  - component: {fileID: 798688797193288852}
-  - component: {fileID: -1904504857123381294}
-  - component: {fileID: 240299600409870123}
+  - component: {fileID: 450143271400860170}
+  - component: {fileID: 1212464149179315139}
+  - component: {fileID: 4444262408638868888}
+  - component: {fileID: 2817141310940247187}
+  - component: {fileID: 7231125420962388284}
+  - component: {fileID: 9135206335764675044}
   m_Layer: 0
-  m_Name: Object Test Spawn
+  m_Name: ObjectTestQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7149789324259346864
+--- !u!4 &450143271400860170
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742473462357141661}
+  m_GameObject: {fileID: 216673892903945202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 171.0748, y: 24.705229, z: 235.4598}
+  m_LocalPosition: {x: 187.544, y: 23.55289, z: 241.339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4002140071127822364
+--- !u!33 &1212464149179315139
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742473462357141661}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7656430205926524933
+  m_GameObject: {fileID: 216673892903945202}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4444262408638868888
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742473462357141661}
+  m_GameObject: {fileID: 216673892903945202}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &798688797193288852
-SphereCollider:
+--- !u!65 &2817141310940247187
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742473462357141661}
+  m_GameObject: {fileID: 216673892903945202}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -105,15 +105,15 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-1904504857123381294
+--- !u!54 &7231125420962388284
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742473462357141661}
+  m_GameObject: {fileID: 216673892903945202}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -134,19 +134,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &240299600409870123
+--- !u!114 &9135206335764675044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742473462357141661}
+  m_GameObject: {fileID: 216673892903945202}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c0cc48eb1a444b28e4718ee3702cca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpPos: {x: 1, y: -0.6, z: 0.8}
+  questFlag: Cube
   item:
-    count: 1
+    count: 10
     data: {fileID: 11400000, guid: 84a967d939c4dab47a17ac92f5ea41bf, type: 2}
