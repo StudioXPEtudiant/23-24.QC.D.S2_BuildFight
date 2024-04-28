@@ -1029,6 +1029,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322869778020631076, guid: ae64fba74f41ace40a6cde73343caed2, type: 3}
+      propertyPath: minSpeed
+      value: 1300
+      objectReference: {fileID: 0}
     - target: {fileID: 5190367820135688458, guid: ae64fba74f41ace40a6cde73343caed2, type: 3}
       propertyPath: m_Name
       value: Joueur Second Version
@@ -1780,6 +1784,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3029251420693570559, guid: fea3a738e21dc6545bc0e35a9a18ab93, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7879924732987480399, guid: fea3a738e21dc6545bc0e35a9a18ab93, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1801,50 +1809,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[0]
-      value: Oh!! Dieu merci!!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[1]
-      value: Un survivant!!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[2]
-      value: "Ca fait 3 mois d\xE9ja que je suis pris ici."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[3]
-      value: Pourrait tu m'aider a faire un bateau?
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[4]
-      value: "Ont pourrait s'\xE9chapper d'ici tout les deux!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[5]
-      value: S'il vous plaaaiiit!!!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[6]
-      value: "Tu a juste a trouv\xE9 ses pi\xE8ces et je l'assemblerai."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044134896388547824, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[0]
-      value: "Reviens me voir quand tu auras les pi\xE8ces requises."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3997632991026750114, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.0029296875
-      objectReference: {fileID: 0}
-    - target: {fileID: 3997632991026750114, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -478.91797
-      objectReference: {fileID: 0}
     - target: {fileID: 5584307840168465086, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
       propertyPath: m_LocalPosition.x
       value: 170

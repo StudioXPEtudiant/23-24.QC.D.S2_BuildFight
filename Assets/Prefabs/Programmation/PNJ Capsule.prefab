@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0024414062, y: -478.9182}
+  m_AnchoredPosition: {x: 0.0029296875, y: -478.91797}
   m_SizeDelta: {x: -0.005, y: -2157.8364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7487771459279314631
@@ -444,9 +444,13 @@ MonoBehaviour:
   dialogues:
   - isRepeatable: 0
     dialogueLines:
-    - Ca
-    - Marche
-    - Youpii!!!
+    - Oh!! Dieu merci!!
+    - Un survivant!!
+    - "Ca fait 3 mois d\xE9ja que je suis pris ici."
+    - Pourrait tu m'aider a faire un bateau?
+    - "Ont pourrait s'\xE9chapper d'ici tout les deux!"
+    - S'il vous plaaaiiit!!!
+    - "Tu a juste a trouv\xE9 ses pi\xE8ces et je l'assemblerai."
     dialogueText: {fileID: 1709549607116246073}
     panel: {fileID: 3280270825427885877}
     dialogueEnd:
@@ -466,7 +470,7 @@ MonoBehaviour:
           m_CallState: 2
   - isRepeatable: 1
     dialogueLines:
-    - "D\xE9sol\xE9 je t'ai d\xE9ja tout donn\xE9"
+    - "Reviens me voir quand tu auras les pi\xE8ces requises."
     dialogueText: {fileID: 1709549607116246073}
     panel: {fileID: 3280270825427885877}
     dialogueEnd:
