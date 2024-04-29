@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PickableFunction : MonoBehaviour
 {
-    /*[SerializeField] private Transform player;
-    [SerializeField] private Transform playerCam;*/
     [SerializeField] private Vector3 pickUpPos;
     [SerializeField] private string questFlag;
     [SerializeField] private Item item;
@@ -15,10 +13,6 @@ public class PickableFunction : MonoBehaviour
     private SimpleGameFlagCollection _flag;
 
     private Rigidbody _rb;
-    
-    /*private bool _hasPlayer;
-    private bool _beCarried;
-    private bool _touched;*/
 
     private void Awake()
     {
