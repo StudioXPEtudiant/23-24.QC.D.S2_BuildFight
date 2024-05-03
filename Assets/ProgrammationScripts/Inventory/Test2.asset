@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0299e16c7340ccacc31957ca69861b, type: 3}
   m_Name: Test2
   m_EditorClassIdentifier: 
-  itemName: 6
-  stackMaxCount: 1
+  itemName: B
+  stackMaxCount: 10
   icon: {fileID: 0}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1035,6 +1035,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 743351848800461702, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4780487224644874028, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
       propertyPath: m_Constraints
       value: 112
@@ -2348,8 +2352,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9135206335764675044, guid: 4e524d6a4805e3b4982ab9c4600a47bc, type: 3}
-      propertyPath: item.count
-      value: 1
+      propertyPath: isPickable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
