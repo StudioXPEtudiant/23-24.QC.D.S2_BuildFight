@@ -6,19 +6,11 @@ using UnityEngine;
 
 public class QuestUIController : MonoBehaviour
 {
-    public static QuestUIController Instance { get; private set; }
-    
     [SerializeField] private TextMeshProUGUI text;
     //[SerializeField] private int questMaxValue;
     [SerializeField] private int questValue;
 
     private int _currentQuestValue;
-
-    private void Awake()
-    {
-        if (Instance == this)
-            Instance = this;
-    }
 
     private void Start()
     {
