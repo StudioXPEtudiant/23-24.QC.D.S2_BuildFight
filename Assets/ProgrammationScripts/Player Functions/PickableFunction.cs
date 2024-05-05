@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 public class PickableFunction : MonoBehaviour
 {
+    /// <summary> Defini si l'object est une quete ou bien si il est ramassable </summary>
     [FoldoutGroup("Configuration"), SerializeField] private bool isPickable;
     [FoldoutGroup("Configuration"), SerializeField] private bool isQuest;
     
@@ -21,22 +22,26 @@ public class PickableFunction : MonoBehaviour
     [ShowIf("isQuest")]
     [SerializeField] private string questFlag;
     
+    [FoldoutGroup("Parameters")]
+    [ShowIf("isQuest")]
+    [SerializeField] private int questValue;
+    
     private InventorySystem _inventory;
     private AthInventorySystem _athInventory;
     private DetectAndActionate _detect;
     private SimpleGameFlagCollection _flag;
+    private QuestUIController _quest;
 
     private Rigidbody _rb;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        
-
         _detect = FindObjectOfType<DetectAndActionate>();
         _inventory = FindObjectOfType<InventorySystem>();
         _athInventory = FindObjectOfType<AthInventorySystem>();
         _flag = FindObjectOfType<SimpleGameFlagCollection>();
+        _quest = FindObjectOfType<QuestUIController>();
     }
     
     public void Pick()
@@ -63,6 +68,8 @@ public class PickableFunction : MonoBehaviour
         if (isQuest)
         {
             _flag.Triggers(questFlag);
+            _quest.UpdateQuestUI(questValue);
+            _quest.Hide();
             Destroy(gameObject);
         }
     }

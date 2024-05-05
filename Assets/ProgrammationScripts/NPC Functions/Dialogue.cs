@@ -10,18 +10,21 @@ using UnityEngine.Events;
 [Serializable]
 public class Dialogue
 {
-    //La configuration du dialogue
+    /// <summary>
+    /// Defini le type d'action lorsque le joueur parle avec le PNJ
+    /// </summary>
     [FoldoutGroup("Configuration"), SerializeField] private bool isRepeatable;
     [FoldoutGroup("Configuration"), SerializeField] private bool isNotRepeatable;
+    [FoldoutGroup("Configuration"), SerializeField] private bool isForQuest;
     
     // Les lignes de dialogue du PNJ
     [FoldoutGroup("Dialogue"), SerializeField] private string[] dialogueLines;
     
     // Référence au composant du text pour afficher le dialogue
     [FoldoutGroup("Parameters"), SerializeField] private Text dialogueText;
-    [FoldoutGroup("Parameters"), SerializeField] public GameObject panel;
-    //[FoldoutGroup("Parameters"), SerializeField] private UnityEvent dialogueEnd;
-    //[FoldoutGroup("Parameters"), SerializeField] private PickableFunction pickable;
+    [FoldoutGroup("Parameters"), SerializeField] public GameObject panel; 
+    [ShowIf("isForQuest")]
+    [FoldoutGroup("Parameters"), SerializeField] private QuestUIController quest;
     
     [FoldoutGroup("Parameters")]
     [ShowIf("isNotRepeatable")]
@@ -50,6 +53,9 @@ public class Dialogue
                 _isCompleted = true;
             
             _isActive = false;
+            
+            if(isForQuest)
+                quest.Show();
             
             ShowPrice();
             DialogueUIController.Instance.Hide();
