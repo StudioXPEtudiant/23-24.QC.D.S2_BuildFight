@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Permet de controller l'affichage des quêtes en fonction de la longévité de celle-ci
+/// </summary>
 public class QuestUIController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;

@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Permet de gérer les quêtes
+/// </summary>
 public class SimpleGameFlagCollection : MonoBehaviour
 {
     public static SimpleGameFlagCollection Instance { get; private set; }

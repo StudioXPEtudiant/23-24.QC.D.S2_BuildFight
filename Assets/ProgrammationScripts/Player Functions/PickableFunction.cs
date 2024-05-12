@@ -4,6 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+/// <summary>
+/// Permet au joueur de prendre des objects suivant la fonction attribuée
+/// </summary>
 public class PickableFunction : MonoBehaviour
 {
     /// <summary> Defini si l'object est une quete ou bien si il est ramassable </summary>

@@ -6,6 +6,9 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+/// <summary>
+/// Permet de gérer les déplacements du joueur
+/// </summary>
 public class TestMovementPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject head;

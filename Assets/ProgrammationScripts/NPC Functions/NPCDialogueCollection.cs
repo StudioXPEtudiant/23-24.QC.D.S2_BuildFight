@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Permet de gérer les dialogues des PNJ ainsi que les récompenses et objets pour la partie
+/// </summary>
 public class NPCDialogueCollection : MonoBehaviour
 {
     [SerializeField] private Dialogue[] dialogues;
