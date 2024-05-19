@@ -1,25 +1,26 @@
 using UnityEngine;
 
+/// <summary>
+/// Permet de gérer la détection des object avec le joueur
+/// </summary>
 public class DetectAndActionate : MonoBehaviour
 {
     [SerializeField] private float distance;
-    //[SerializeField] private LayerMask layers;
 
     private bool _isTake;
+    
     private OpenInventoryUI _inventoryUI;
-    //private AthInventorySystem _athInventory;
-    
     private SimpleConditionalAction _dialogue;
-    
     private PickableFunction _pickableFunction;
-
+    private NextLevelFunction _nextLevel;
+    
     private RaycastHit _hit;
 
     private void Awake()
     {
         _inventoryUI = FindObjectOfType<OpenInventoryUI>();
-        //_athInventory = FindObjectOfType<AthInventorySystem>();
         _pickableFunction = FindObjectOfType<PickableFunction>();
+        _nextLevel = FindObjectOfType<NextLevelFunction>();
     }
     //Quand je joueur clique sur le bouton gauche de la souris
     public void ActionateObjectFirstAction()
@@ -30,9 +31,12 @@ public class DetectAndActionate : MonoBehaviour
         if (!Physics.Raycast(ray, out _hit, distance)) return;
 
         _dialogue = _hit.collider.GetComponent<SimpleConditionalAction>();
-
         if (_dialogue) 
             _dialogue.Execute();
+        
+        _nextLevel = _hit.collider.GetComponent<NextLevelFunction>();
+        if(_nextLevel)
+            _nextLevel.NextLevel();
     }
 
     public void InteractObject()
@@ -47,18 +51,7 @@ public class DetectAndActionate : MonoBehaviour
         if (!_pickableFunction) return;
         _isTake = true;
         _pickableFunction.Pick();
-
-        /*var dropObject = GetComponentInChildren<PickableFunction>();
-        if (dropObject)
-            _pickableFunction.Drop();*/
     }
-
-    /*public void DropObject()
-    {
-        if(_isTake) return;
-        _pickableFunction.Drop();
-        _isTake = false;
-    }*/
 
     public void OpenInventoryInterface()
     { 
@@ -69,9 +62,4 @@ public class DetectAndActionate : MonoBehaviour
     {
         _inventoryUI.CloseInterface();
     }
-
-    /*public void SelectNextSlot()
-    {
-        _athInventory.NextSlot();
-    }*/
 }

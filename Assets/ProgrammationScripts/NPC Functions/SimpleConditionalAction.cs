@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Permet de gérer les dialogues des PNJ suivant les quêtes
+/// </summary>
 public class SimpleConditionalAction : MonoBehaviour
 {
     [SerializeField] private string[] requiredFlags;

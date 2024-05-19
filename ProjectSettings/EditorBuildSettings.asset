@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_Final.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Scene Konstantin.unity
+    guid: f5965b89ce1cfaf48a17a8fb90731af5
+  - enabled: 1
+    path: Assets/Scenes/CutScene.unity
+    guid: 0309d6670a071c64ca1ab60d7e252ce5
   m_configObjects: {}
