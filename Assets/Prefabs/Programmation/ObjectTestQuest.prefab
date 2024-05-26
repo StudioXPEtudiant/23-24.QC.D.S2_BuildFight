@@ -146,8 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0cc48eb1a444b28e4718ee3702cca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPickable: 1
+  isQuest: 0
   pickUpPos: {x: 1, y: -0.6, z: 0.8}
-  questFlag: Cube
   item:
-    count: 10
-    data: {fileID: 11400000, guid: 84a967d939c4dab47a17ac92f5ea41bf, type: 2}
+    count: 0
+    data: {fileID: 0}
+  questFlag: Cube

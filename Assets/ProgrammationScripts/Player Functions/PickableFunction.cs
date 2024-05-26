@@ -1,13 +1,25 @@
 using System;
+using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PickableFunction : MonoBehaviour
 {
-    /*[SerializeField] private Transform player;
-    [SerializeField] private Transform playerCam;*/
+    [FoldoutGroup("Configuration"), SerializeField] private bool isPickable;
+    [FoldoutGroup("Configuration"), SerializeField] private bool isQuest;
+    
+    [FoldoutGroup("Parameters", false)]
+    [ShowIf("isPickable")]
     [SerializeField] private Vector3 pickUpPos;
-    [SerializeField] private string questFlag;
+    
+    [FoldoutGroup("Parameters")]
+    [ShowIf("isPickable")]
     [SerializeField] private Item item;
+    
+    [FoldoutGroup("Parameters")]
+    [ShowIf("isQuest")]
+    [SerializeField] private string questFlag;
     
     private InventorySystem _inventory;
     private AthInventorySystem _athInventory;
@@ -15,10 +27,6 @@ public class PickableFunction : MonoBehaviour
     private SimpleGameFlagCollection _flag;
 
     private Rigidbody _rb;
-    
-    /*private bool _hasPlayer;
-    private bool _beCarried;
-    private bool _touched;*/
 
     private void Awake()
     {
@@ -33,30 +41,32 @@ public class PickableFunction : MonoBehaviour
     
     public void Pick()
     {
-        //if(!_inventory.TrySetItemInEmptySlot(gameObject)) return;
-        
-        Transform transform1;
-        (transform1 = transform).parent = _detect.GetComponent<Transform>();
-        transform1.localPosition = pickUpPos;
-        transform1.localScale = Vector3.one;
-        
-        _rb.isKinematic = true;
-        _rb.useGravity = false;
-        
-        _flag.Triggers(questFlag);
-        _inventory.AddItem(item);
-        _athInventory.AddItemToAth(item);
-
-        foreach (var col in GetComponents<Collider>())
+        if (isPickable)
         {
-            col.enabled = false;
+            Transform transform1;
+            (transform1 = transform).parent = _detect.GetComponent<Transform>();
+            transform1.localPosition = pickUpPos;
+            transform1.localScale = Vector3.one;
+        
+            _rb.isKinematic = true;
+            _rb.useGravity = false;
+        
+            _inventory.AddItem(item);
+            _athInventory.AddItemToAth(item);
+
+            foreach (var col in GetComponents<Collider>())
+            {
+                col.enabled = false;
+            }
         }
         
-        /*_rb.isKinematic = true;
-        transform.parent = playerCam;*/
-        //_beCarried = true;
-        //Destroy(gameObject);
+        if (isQuest)
+        {
+            _flag.Triggers(questFlag);
+            Destroy(gameObject);
+        }
     }
+    
     
     public void Drop()
     {
