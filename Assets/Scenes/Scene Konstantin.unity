@@ -1062,6 +1062,10 @@ PrefabInstance:
       propertyPath: dialogues.Array.data[0].quest
       value: 
       objectReference: {fileID: 1675671458}
+    - target: {fileID: 743351848800461702, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3628949599076140906, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1104,6 +1108,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584307840168465086, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893220718122986174, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
+      propertyPath: dialogues.Array.data[1].isRepeatable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8846427392374294580, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}

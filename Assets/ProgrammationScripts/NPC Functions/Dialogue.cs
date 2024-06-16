@@ -58,9 +58,7 @@ public class Dialogue
             _isActive = false;
             
             if(isForQuest)
-            {
                 quest.Show();
-            }
             
             ShowPrice();
             DialogueUIController.Instance.Hide();
@@ -73,7 +71,6 @@ public class Dialogue
     public void ShowPrice()
     {
         objectPrice.SetActive(true);
-        //pickable.gameObject.SetActive(true);
     }
 
     private void Init() 
