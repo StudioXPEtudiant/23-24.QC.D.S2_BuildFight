@@ -464,6 +464,32 @@ MonoBehaviour:
     sendAxisValue:
       m_PersistentCalls:
         m_Calls: []
+  - axis: Quests
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2922862529585457289}
+          m_TargetAssemblyTypeName: DetectAndActionate, Assembly-CSharp
+          m_MethodName: OpenQuestInterface
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &5971884921561702151
 GameObject:
   m_ObjectHideFlags: 0

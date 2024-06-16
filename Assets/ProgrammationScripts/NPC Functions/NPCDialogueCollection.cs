@@ -14,7 +14,6 @@ public class NPCDialogueCollection : MonoBehaviour
         foreach (var dialogue in dialogues)
         {
             dialogue.objectPrice = GameObject.FindGameObjectWithTag("NextLvl");
-            //dialogue.pickable = FindObjectOfType<PickableFunction>();
             dialogue.quest = FindObjectOfType<QuestUIController>();
         }
     }
@@ -24,7 +23,6 @@ public class NPCDialogueCollection : MonoBehaviour
         foreach (var dialogue in dialogues)
         {
             dialogue.objectPrice.SetActive(false);
-            //dialogue.pickable.gameObject.SetActive(false);
             dialogue.quest.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
@@ -36,7 +34,9 @@ public class NPCDialogueCollection : MonoBehaviour
             dialogue.panel.gameObject.SetActive(true);
             if(!dialogue.IsAvailable) continue;
 
-            dialogue.ShowNextLine(); 
+            dialogue.ShowNextLine();
+            
+            //if(dialogue.IsCompleted) dialogue.panel.gameObject.SetActive(false);
             return;
         }
     }
