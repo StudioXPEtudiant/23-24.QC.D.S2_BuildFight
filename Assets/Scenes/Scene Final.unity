@@ -1785,7 +1785,7 @@ MonoBehaviour:
     dialogueText: {fileID: 562463806}
     panel: {fileID: 1663125794}
     quest: {fileID: 160594985}
-    pickable: {fileID: 0}
+    objectPrice: {fileID: 0}
   - isRepeatable: 1
     isNotRepeatable: 0
     isForQuest: 0
@@ -1794,7 +1794,7 @@ MonoBehaviour:
     dialogueText: {fileID: 562463806}
     panel: {fileID: 1663125794}
     quest: {fileID: 160594985}
-    pickable: {fileID: 0}
+    objectPrice: {fileID: 0}
 --- !u!4 &635698169
 Transform:
   m_ObjectHideFlags: 0
@@ -1995,7 +1995,7 @@ MonoBehaviour:
     dialogueText: {fileID: 562463806}
     panel: {fileID: 1663125794}
     quest: {fileID: 0}
-    pickable: {fileID: 0}
+    objectPrice: {fileID: 0}
   - isRepeatable: 1
     isNotRepeatable: 0
     isForQuest: 0
@@ -2003,7 +2003,7 @@ MonoBehaviour:
     dialogueText: {fileID: 562463806}
     panel: {fileID: 1663125794}
     quest: {fileID: 0}
-    pickable: {fileID: 0}
+    objectPrice: {fileID: 0}
 --- !u!4 &811430631
 Transform:
   m_ObjectHideFlags: 0
@@ -2752,17 +2752,6 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
---- !u!114 &1055911448 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6129251648310246118, guid: 30081bc4e26f87741bd88733072079cb, type: 3}
-  m_PrefabInstance: {fileID: 3306241125570308875}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c0cc48eb1a444b28e4718ee3702cca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1081804184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4869,7 +4858,7 @@ PrefabInstance:
     - target: {fileID: 7893220718122986174, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
       propertyPath: dialogues.Array.data[0].pickable
       value: 
-      objectReference: {fileID: 1055911448}
+      objectReference: {fileID: 0}
     - target: {fileID: 7893220718122986174, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
       propertyPath: dialogues.Array.data[0].dialogueLines.Array.size
       value: 2
