@@ -7,10 +7,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int quantity;
     
 
-    public void Spawn(GameObject other)
+    public void Spawn()
     {
-        if (other.gameObject.GetComponent<PickableFunction>() != null) return;
-        
         for (var i = 0; i < quantity; i++)
         {
             Instantiate(prefab, null).transform.localPosition = transform.position + Vector3.up;

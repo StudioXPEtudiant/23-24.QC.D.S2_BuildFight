@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7573591586668015889}
   - component: {fileID: 1237930165327103364}
   - component: {fileID: 1035519330371448059}
-  - component: {fileID: 6129251648310246118}
   - component: {fileID: 2098454264419607205}
   - component: {fileID: 4489219178299842923}
+  - component: {fileID: -1581465799366738831}
+  - component: {fileID: -4912176562761400256}
   m_Layer: 0
   m_Name: Wood_BoatV1
   m_TagString: Untagged
@@ -109,26 +110,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6717044640063268569, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
---- !u!114 &6129251648310246118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8194224963265209429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c0cc48eb1a444b28e4718ee3702cca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPickable: 0
-  isQuest: 0
-  pickUpPos: {x: 0, y: 0, z: 0}
-  item:
-    count: 0
-    data: {fileID: 0}
-  questFlag: 
-  questValue: 0
 --- !u!54 &2098454264419607205
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177,3 +158,35 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.0378194, y: 0.40971065, z: 1.4876773}
   m_Center: {x: -0.02549696, y: 0.5946735, z: -0.04004991}
+--- !u!114 &-1581465799366738831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194224963265209429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c9a996ff129a34191d86f10d96c659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4912176562761400256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194224963265209429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0cc48eb1a444b28e4718ee3702cca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPickable: 0
+  isQuest: 0
+  pickUpPos: {x: 0, y: 0, z: 0}
+  item:
+    count: 0
+    data: {fileID: 0}
+  questFlag: 
+  questValue: 0

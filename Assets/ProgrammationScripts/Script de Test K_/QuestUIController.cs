@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using System.Collections;
@@ -7,13 +8,19 @@ using System.Collections;
 public class QuestUIController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    //[SerializeField] private int questMaxValue;
+    
     [SerializeField] private int questValue;
-    private int _currentQuestValue;
+    
+    public static QuestUIController Intance { get; private set; }
+
+    private void Awake()
+    {
+        Intance = this;
+    }
+
     private void Start()
     {
-        gameObject.SetActive(false);
-        _currentQuestValue = questValue;
+        Hide();
     }
     public void UpdateQuestUI(int value)
     {
@@ -21,15 +28,10 @@ public class QuestUIController : MonoBehaviour
     }
     public void Show()
     {
-        gameObject.SetActive(true);
+        transform.GetChild(0).gameObject.SetActive(true);
     }
     public void Hide()
     {
-        StartCoroutine(WaitBeforeHide());
-    }
-    private IEnumerator WaitBeforeHide()
-    {
-        yield return new WaitForSeconds(2f);
-        gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 }

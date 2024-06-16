@@ -13,7 +13,8 @@ public class NPCDialogueCollection : MonoBehaviour
     {
         foreach (var dialogue in dialogues)
         {
-            dialogue.pickable = GetComponentInChildren<PickableFunction>();
+            dialogue.pickable = FindObjectOfType<PickableFunction>();
+            dialogue.quest = FindObjectOfType<QuestUIController>();
         }
     }
 
@@ -22,6 +23,7 @@ public class NPCDialogueCollection : MonoBehaviour
         foreach (var dialogue in dialogues)
         {
             dialogue.pickable.gameObject.SetActive(false);
+            dialogue.quest.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 

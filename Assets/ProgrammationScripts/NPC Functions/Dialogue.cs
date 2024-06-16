@@ -23,8 +23,10 @@ public class Dialogue
     // Référence au composant du text pour afficher le dialogue
     [FoldoutGroup("Parameters"), SerializeField] private Text dialogueText;
     [FoldoutGroup("Parameters"), SerializeField] public GameObject panel; 
+    
     [ShowIf("isForQuest")]
-    [FoldoutGroup("Parameters"), SerializeField] private QuestUIController quest;
+    [FoldoutGroup("Parameters")]
+    [SerializeField] public QuestUIController quest;
     
     [FoldoutGroup("Parameters")]
     [ShowIf("isNotRepeatable")]
@@ -55,7 +57,9 @@ public class Dialogue
             _isActive = false;
             
             if(isForQuest)
+            {
                 quest.Show();
+            }
             
             ShowPrice();
             DialogueUIController.Instance.Hide();

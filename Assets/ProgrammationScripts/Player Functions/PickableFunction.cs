@@ -33,7 +33,6 @@ public class PickableFunction : MonoBehaviour
     private AthInventorySystem _athInventory;
     private DetectAndActionate _detect;
     private SimpleGameFlagCollection _flag;
-    private QuestUIController _quest;
 
     private Rigidbody _rb;
 
@@ -44,7 +43,6 @@ public class PickableFunction : MonoBehaviour
         _inventory = FindObjectOfType<InventorySystem>();
         _athInventory = FindObjectOfType<AthInventorySystem>();
         _flag = FindObjectOfType<SimpleGameFlagCollection>();
-        _quest = FindObjectOfType<QuestUIController>();
     }
         
     public void Pick()
@@ -71,8 +69,8 @@ public class PickableFunction : MonoBehaviour
         if (isQuest)
         {
             _flag.Triggers(questFlag);
-            _quest.UpdateQuestUI(questValue);
-            _quest.Hide();
+            QuestUIController.Intance.UpdateQuestUI(questValue);
+            QuestUIController.Intance.Hide();
             Destroy(gameObject);
         }
     }
