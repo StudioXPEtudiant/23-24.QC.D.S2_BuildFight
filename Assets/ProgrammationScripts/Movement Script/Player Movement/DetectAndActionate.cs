@@ -10,6 +10,7 @@ public class DetectAndActionate : MonoBehaviour
     private bool _isTake;
     
     private OpenInventoryUI _inventoryUI;
+    private QuestSystem _quest;
     private SimpleConditionalAction _dialogue;
     private PickableFunction _pickableFunction;
     private NextLevelFunction _nextLevel;
@@ -21,6 +22,7 @@ public class DetectAndActionate : MonoBehaviour
         _inventoryUI = FindObjectOfType<OpenInventoryUI>();
         _pickableFunction = FindObjectOfType<PickableFunction>();
         _nextLevel = FindObjectOfType<NextLevelFunction>();
+        _quest = FindObjectOfType<QuestSystem>();
     }
     //Quand je joueur clique sur le bouton gauche de la souris
     public void ActionateObjectFirstAction()
@@ -58,8 +60,14 @@ public class DetectAndActionate : MonoBehaviour
         _inventoryUI.OpenInterface();
     }
 
+    public void OpenQuestInterface()
+    {
+        _quest.Show();
+    }
+
     public void Escape()
     {
         _inventoryUI.CloseInterface();
+        _quest.Hide();
     }
 }

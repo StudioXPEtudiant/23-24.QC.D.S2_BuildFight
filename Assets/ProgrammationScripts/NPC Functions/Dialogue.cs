@@ -23,12 +23,15 @@ public class Dialogue
     // Référence au composant du text pour afficher le dialogue
     [FoldoutGroup("Parameters"), SerializeField] private Text dialogueText;
     [FoldoutGroup("Parameters"), SerializeField] public GameObject panel; 
+    
     [ShowIf("isForQuest")]
-    [FoldoutGroup("Parameters"), SerializeField] private QuestUIController quest;
+    [FoldoutGroup("Parameters")]
+    [SerializeField] public QuestUIController quest;
     
     [FoldoutGroup("Parameters")]
     [ShowIf("isNotRepeatable")]
-    [SerializeField] public PickableFunction pickable; //Object  a faire spawn;
+    [SerializeField] public GameObject objectPrice;
+    //[SerializeField] public PickableFunction pickable; //Object  a faire spawn;
     
     
     private int _currentLine = 0; // La ligne de dialogue actuelle
@@ -55,7 +58,9 @@ public class Dialogue
             _isActive = false;
             
             if(isForQuest)
+            {
                 quest.Show();
+            }
             
             ShowPrice();
             DialogueUIController.Instance.Hide();
@@ -67,7 +72,8 @@ public class Dialogue
 
     public void ShowPrice()
     {
-        pickable.gameObject.SetActive(true);
+        objectPrice.SetActive(true);
+        //pickable.gameObject.SetActive(true);
     }
 
     private void Init() 

@@ -13,7 +13,9 @@ public class NPCDialogueCollection : MonoBehaviour
     {
         foreach (var dialogue in dialogues)
         {
-            dialogue.pickable = GetComponentInChildren<PickableFunction>();
+            dialogue.objectPrice = GameObject.FindGameObjectWithTag("NextLvl");
+            //dialogue.pickable = FindObjectOfType<PickableFunction>();
+            dialogue.quest = FindObjectOfType<QuestUIController>();
         }
     }
 
@@ -21,7 +23,9 @@ public class NPCDialogueCollection : MonoBehaviour
     {
         foreach (var dialogue in dialogues)
         {
-            dialogue.pickable.gameObject.SetActive(false);
+            dialogue.objectPrice.SetActive(false);
+            //dialogue.pickable.gameObject.SetActive(false);
+            dialogue.quest.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
