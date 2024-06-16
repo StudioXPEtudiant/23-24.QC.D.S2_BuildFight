@@ -1062,6 +1062,10 @@ PrefabInstance:
       propertyPath: dialogues.Array.data[0].quest
       value: 
       objectReference: {fileID: 1675671458}
+    - target: {fileID: 3628949599076140906, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5584307840168465086, guid: 3ab433eb523b7a34c81e1b63abdbb795, type: 3}
       propertyPath: m_LocalPosition.x
       value: 180.07738
