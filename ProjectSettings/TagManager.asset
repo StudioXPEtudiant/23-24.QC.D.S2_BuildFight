@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PNJ
   - Ground
+  - Tree
+  - NextLvl
   layers:
   - Default
   - TransparentFX

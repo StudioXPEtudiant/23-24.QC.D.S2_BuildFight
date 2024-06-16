@@ -30,7 +30,8 @@ public class Dialogue
     
     [FoldoutGroup("Parameters")]
     [ShowIf("isNotRepeatable")]
-    [SerializeField] public PickableFunction pickable; //Object  a faire spawn;
+    [SerializeField] public GameObject objectPrice;
+    //[SerializeField] public PickableFunction pickable; //Object  a faire spawn;
     
     
     private int _currentLine = 0; // La ligne de dialogue actuelle
@@ -71,7 +72,8 @@ public class Dialogue
 
     public void ShowPrice()
     {
-        pickable.gameObject.SetActive(true);
+        objectPrice.SetActive(true);
+        //pickable.gameObject.SetActive(true);
     }
 
     private void Init() 
